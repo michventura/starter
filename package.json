@@ -1,0 +1,66 @@
+{
+	"private": true,
+	"sideEffects": false,
+	"scripts": {
+		"build": "npm run build:css && remix build",
+		"build:css": "",
+		"generate:css": "tailwindcss -m -c ./tailwind.config.js -i ./styles/app.css -o app/styles/app.css",
+		"clean": "del ./node_modules/.cache build public/build && cat /dev/null > app/styles/app.css",
+		"dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+		"dev:css": "npm run generate:css -- --watch",
+		"start": "remix-serve build"
+	},
+	"prettier": {
+		"arrowParens": "avoid",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"embeddedLanguageFormatting": "auto",
+		"endOfLine": "lf",
+		"htmlWhitespaceSensitivity": "css",
+		"insertPragma": false,
+		"jsxSingleQuote": false,
+		"printWidth": 80,
+		"proseWrap": "always",
+		"quoteProps": "as-needed",
+		"requirePragma": false,
+		"semi": false,
+		"singleAttributePerLine": false,
+		"singleQuote": true,
+		"tabWidth": 2,
+		"trailingComma": "all",
+		"useTabs": true,
+		"tailwindConfig": "./tailwind.config.js"
+	},
+	"eslintIgnore": [
+		"/node_modules",
+		"/build",
+		"/public"
+	],
+	"dependencies": {
+		"@remix-run/node": "^1.7.2",
+		"@remix-run/react": "^1.7.2",
+		"@remix-run/serve": "^1.7.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@remix-run/dev": "^1.7.2",
+		"@remix-run/eslint-config": "^1.7.2",
+		"@types/node": "^18.8.2",
+		"@types/react": "^18.0.21",
+		"@types/react-dom": "^18.0.6",
+		"autoprefixer": "^10.4.12",
+		"concurrently": "^7.4.0",
+		"del-cli": "^5.0.0",
+		"eslint": "^8.24.0",
+		"eslint-config-prettier": "^8.5.0",
+		"postcss": "^8.4.17",
+		"prettier": "^2.7.1",
+		"prettier-plugin-tailwindcss": "^0.1.13",
+		"tailwindcss": "^3.1.8",
+		"typescript": "^4.8.4"
+	},
+	"engines": {
+		"node": ">=14"
+	}
+}
