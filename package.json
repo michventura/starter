@@ -28,8 +28,7 @@
 		"singleQuote": true,
 		"tabWidth": 2,
 		"trailingComma": "all",
-		"useTabs": true,
-		"tailwindConfig": "./tailwind.config.js"
+		"useTabs": true
 	},
 	"eslintIgnore": [
 		"/node_modules",
