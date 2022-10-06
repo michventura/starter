@@ -3,7 +3,7 @@
 	"sideEffects": false,
 	"scripts": {
 		"build": "npm run build:css && remix build",
-		"build:css": "",
+		"build:css": "npm run generate:css",
 		"generate:css": "tailwindcss -m -c ./tailwind.config.js -i ./styles/app.css -o app/styles/app.css",
 		"clean": "del ./node_modules/.cache build public/build && cat /dev/null > app/styles/app.css",
 		"dev": "concurrently \"npm run dev:css\" \"remix dev\"",
